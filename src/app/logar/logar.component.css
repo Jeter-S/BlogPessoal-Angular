@@ -1,0 +1,9 @@
+#img-bg{
+    background-image: url('https://st2.depositphotos.com/3224051/7010/i/450/depositphotos_70102513-stock-photo-soft-abstract-hexagonal-background-blue.jpg');
+
+    min-height: 600px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
