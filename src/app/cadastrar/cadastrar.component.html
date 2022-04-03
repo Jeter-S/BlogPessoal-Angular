@@ -6,12 +6,12 @@
 
       <div class="form-group margin-left">
         <label for="nome" class="text-white">Nome</label>
-        <input class="form-control tm-form " type="text" name="nome" id="nome" placeholder="Digite seu nome">
+        <input [(ngModel)]='usuario.nome' class="form-control tm-form " type="text" name="nome" id="nome" placeholder="Digite seu nome">
       </div>
 
       <div class="form-group margin-left">
         <label for="idade" class="text-white">Idade</label>
-        <input class="form-control tm-form" type="number" name="idade" id="Idade" placeholder="Digite sua Idade">
+        <input [(ngModel)]='usuario.idade' class="form-control tm-form" type="number" name="idade" id="Idade" placeholder="Digite sua Idade">
       </div>
 
       <div class="form-group margin-left">
@@ -26,28 +26,37 @@
 
       <div class="form-group margin-left">
         <label for="usuario" class="text-white">Usuário</label>
-        <input class="form-control tm-form" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário">
+        <input [(ngModel)]='usuario.usuario' class="form-control tm-form" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário">
       </div>
 
       <div class="form-group margin-left">
         <label for="foto" class="text-white">Foto</label>
-        <input class="form-control tm-form" type="text" name="foto" id="foto" placeholder="Insira o link da sua foto">
+        <input [(ngModel)]='usuario.foto' class="form-control tm-form" type="text" name="foto" id="foto" placeholder="Insira o link da sua foto">
+      </div>
+
+      <div class="form-group margin-left">
+        <label for="tipo" class="text-white">Tipo de usuário</label>
+        <select class="form-control tm-form" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
+          <option value="normal">Normal</option>
+          <option value="administrador">Administrador</option>
+        </select>
+
       </div>
 
       <div class="form-group margin-left">
         <label for="senha" class="text-white">senha</label>
-        <input class="form-control tm-form" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+        <input (input)='confirmeSenha($event)' class="form-control tm-form" type="password" name="senha" id="senha" placeholder="Digite sua senha">
       </div>
 
       <div class="form-group margin-left">
         <label for="confirmarSenha" class="text-white">Confirmar senha</label>
-        <input class="form-control tm-form" type="password" name="confirmarSenha" id="confirmarSenha"
+        <input [(ngModel)]='usuario.senha' class="form-control tm-form" type="password" name="confirmarSenha" id="confirmarSenha"
           placeholder="Digite sua senha novamente">
       </div>
 
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-danger mr-4" routerLink='/logar'>Cancelar</button>
-        <button type="submit" class="btn btn-success " routerLink='/logar'>Cadastrar</button>
+        <button type="submit" class="btn btn-success " routerLink='/logar' (click)='cadastrar()'>Cadastrar</button>
       </div>
 
     </div>
