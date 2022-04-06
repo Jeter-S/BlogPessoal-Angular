@@ -26,10 +26,9 @@ export class LogarComponent implements OnInit {
     this.authService.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
       this.usuarioLogin = resp
 
-      environment.token;
-      environment.nome;
-      environment.foto;
-      environment.id;
+      environment.token = this.usuarioLogin.token;
+      environment.nome = this.usuarioLogin.nome;
+      environment.foto = this.usuarioLogin.foto;
 
       this.router.navigate(['/inicio'])
     }, erro =>{

@@ -8,6 +8,10 @@ ul.social-network li {
     margin: 0;
 }
 
+.bg-footer{
+    background-color: black;
+}
+
 .fa{
     font-size: 30pt;
     color: white;

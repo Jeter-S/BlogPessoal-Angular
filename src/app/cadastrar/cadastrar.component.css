@@ -1,5 +1,8 @@
 #img-bg{
     background-image: url(https://i.imgur.com/rKvLHZi.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
 .tm-form{
     width: 80%;
