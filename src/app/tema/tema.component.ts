@@ -12,7 +12,7 @@ import { TemaService } from '../service/tema.service';
 export class TemaComponent implements OnInit {
 
   tema: Tema = new Tema;
-  listaTema: Tema[];
+  listaTemas: Tema[];
   constructor(
     private temaSevice: TemaService,
     private router: Router,
@@ -24,21 +24,21 @@ export class TemaComponent implements OnInit {
       this.router.navigate(['/logar'])
     }
 
-    this.findAllTema();
+    this.findAllTemas();
   }
 
   cadastrar() {
     this.temaSevice.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp;
       alert("Tema cadastrado com sucesso!")
-      this.findAllTema();
+      this.findAllTemas();
       this.tema = new Tema;
     })
   }
 
-  findAllTema() {
+  findAllTemas() {
     this.temaSevice.getAllTema().subscribe((resp: Tema[])=> {
-      this.listaTema = resp;
+      this.listaTemas = resp;
     })
   }
 }
