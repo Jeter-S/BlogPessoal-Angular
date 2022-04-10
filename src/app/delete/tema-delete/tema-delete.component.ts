@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaDeleteComponent implements OnInit {
 
-  tema: Tema =new Tema();
+  tema: Tema = new Tema();
   idTema: number;
 
   constructor(
